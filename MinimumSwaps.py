@@ -9,12 +9,11 @@ import sys
 
 def minimumSwaps(arr):
     swaps = 0
-    for ordered, unordered in enumerate(arr, 1):
-        correct_value=ordered
-        if unordered!=correct_value:
-            
-  
-    print(swaps , arr)
+    for i in range(len(arr)):
+        while arr[i] != i+1:
+            required_index=arr[i]-1
+            arr[i],arr[required_index]=arr[required_index],arr[i]
+            swaps += 1
     return swaps
 
 
