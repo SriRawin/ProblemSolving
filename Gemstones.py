@@ -14,7 +14,7 @@ import sys
 def gemstones(arr):
     set_list=[set(value) for value in arr]
     result_set=set.intersection(*set_list)
-    return len(result_set)  
+    return len(result_set)
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
