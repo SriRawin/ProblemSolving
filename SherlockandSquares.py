@@ -15,11 +15,9 @@ from typing import Counter
 #
 
 def squares(a, b):
-    square_count=math.ceil(math.sqrt(b)) -  math.floor(math.sqrt(a))
+    square_count=math.floor(math.sqrt(b)) -  math.ceil(math.sqrt(a))
+    return square_count+1
     
-   
-    
-    return square_count
     
     
 
