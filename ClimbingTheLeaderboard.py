@@ -4,36 +4,16 @@ import random
 import re
 import sys
 
-
-def search(ranked, rank):
-    for i in range(len(ranked)):
-        if i == 0:
-            if rank <= ranked[i] and rank >= ranked[i+1]:
-
-                return (i+1)+1
-            elif rank > ranked[i]:
-
-                return i+1
-        elif i == (len(ranked)-1):
-            if rank >= ranked[i] and rank <= ranked[i+1]:
-
-                return (i+1)
-            elif rank < ranked[i]:
-
-                return (i+1)+1
-        else:
-            if rank <= ranked[(len(ranked)-1)-i] and rank >= ranked[(len(ranked)-1)-(i-1)]:
-
-                return (len(ranked)-i)+1
-
-
 def climbingLeaderboard(ranked, player):
     ranked = sorted(set(ranked))
     ranked.reverse()
     rank_list = []
+    n=len(ranked)
     for rank in player:
-        rank_list.append(search(ranked, rank))
-    print(rank_list)
+        while n>0 and rank>=ranked[n-1]:
+            n-=1
+        rank_list.append(n+1)
+   
     return rank_list
 
 
