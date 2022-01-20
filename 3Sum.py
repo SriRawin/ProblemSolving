@@ -16,7 +16,7 @@ def threeSum(nums):
             else:
                 res.append([num, nums[l], nums[r]])
                 l += 1
-                while nums[l] == nums[l] and l < r:
+                while nums[l] == nums[l-1] and l < r:
                     l += 1
 
     return res
